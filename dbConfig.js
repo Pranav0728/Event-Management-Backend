@@ -25,5 +25,21 @@ async function testConnection() {
   }
 }
 
-// Export the connection pool and test connection function
-module.exports = { connection, testConnection };
+// Lambda-compatible default export
+const dbHandler = async (event, context) => {
+  try {
+    await testConnection(); // Test connection when the handler is invoked
+    return {
+      statusCode: 200,
+      body: JSON.stringify({ message: "Database connection successful" }),
+    };
+  } catch (error) {
+    return {
+      statusCode: 500,
+      body: JSON.stringify({ message: "Error connecting to the database", error }),
+    };
+  }
+};
+
+module.exports = dbHandler; // Default export for Lambda
+module.exports.connection = connection; // Named export for other modules

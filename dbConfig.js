@@ -21,7 +21,6 @@ async function testConnection() {
     console.log("Connected to MYSQL");
   } catch (e) {
     console.error("Error connecting to the database:", e);
-    throw e; // Rethrow the error after logging
   }
 }
 

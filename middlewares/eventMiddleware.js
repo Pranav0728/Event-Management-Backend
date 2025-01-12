@@ -21,10 +21,6 @@ module.exports = (req, res, next) => {
     // console.log("cost is string, converting it in a number")
     cost = Number(cost)
   }
-  // console.log("isPaid is of type: ", typeof isPaid);
-  // console.log("cost is of type: ",typeof cost);
-
-  // Check if required fields are present
   if (
     !eventName ||
     !nameOfSpeaker ||

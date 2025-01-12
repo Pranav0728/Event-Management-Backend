@@ -1,6 +1,6 @@
 {
     "version": 2,
-    "builds": [{"src": "./dbConfig.js", "use": "@vercel/node"}],
-    "routes": [{ "src": "/(.*)", "dest": "/" }]
+    "builds": [{"src": "dbConfig.js", "use": "@vercel/node"}],
+    "routes": [{ "src": "/(.*)", "dest": "dbConfig.js" }]
   }
   

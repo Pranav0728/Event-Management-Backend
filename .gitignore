@@ -1,0 +1,13 @@
+node_modules
+.env
+
+*.DS_Store
+*.zip
+*.svg
+package-lock.json
+
+public/assets/banner/
+public/assets/loa/
+public/assets/notice/
+
+public/assets/uploads/

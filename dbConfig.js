@@ -14,23 +14,15 @@ const connection = mysql.createPool({
   multipleStatements: true,
 }).promise();
 
-
-
-// Start the server function
-async function startServer() {
+// Test connection function
+async function testConnection() {
   try {
-    // Start the server
-    const app = require("./app");
-    const port = process.env.PORT || 3000;
-    app.listen(port, () => {
-      console.log(`Server listening on port ${port}`);
-    });
+    await connection.query("SELECT 1");
+    console.log("Connected to MYSQL");
   } catch (e) {
-    console.error("Failed to start server:", e);
+    console.error("Error connecting to the database:", e);
   }
 }
 
-// Start the application
-startServer();
-
-module.exports = { connection };
+// Export the connection pool and test connection function
+module.exports = { connection, testConnection };

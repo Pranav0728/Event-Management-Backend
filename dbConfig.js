@@ -26,4 +26,4 @@ async function testConnection() {
 }
 
 // Export the connection pool and test connection function
- module.exports = { connection, testConnection };
+module.exports = { connection, testConnection };

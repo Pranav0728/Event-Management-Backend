@@ -7,9 +7,11 @@ const adminController = require("../controllers/adminController")
 const qrCodeController = require("../controllers/qrCodeController")
 const setupController = require("../controllers/setupController")
 const studentController = require("../controllers/studentController")
+const getslash = require("../controllers/get")
 
 //event handlers
 router.post('/event', eventMiddleware,eventController.createEvent)
+router.get('/',getslash.get)
 router.get('/event', eventController.getAllEvents)
 router.put('/event/:eventId', eventMiddleware, eventController.updateEvent)
 router.delete('/event/:eventId', eventController.deleteEvent) // this delete removes the event permanently

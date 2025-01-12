@@ -1,5 +1,3 @@
-
-
 const { connection, testConnection } = require("./dbConfig");
 
 async function start() {
